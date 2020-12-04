@@ -9,14 +9,6 @@ public class HomeController {
    
 	@GetMapping("/")
 	public String getHomeView(ModelMap model) {
-		model.put("name","page");
-		model.put("addres","123 fake st.");
-		return "index";
-	}
-	
-	@GetMapping("/testing")
-	public String getHomeTesteView(ModelMap model) {
-		model.put("name", "Jhon Doe");
-		return "index";
+  		return "index";
 	}
 }
