@@ -6,7 +6,7 @@ import java.util.List;
 import com.project.nasaAPI.Model.MarsPhotoModel;
 
 public class MarsRoverApiResponse {
-   List<MarsPhotoModel> photo =  new ArrayList<>();
+   List<MarsPhotoModel> photo = new ArrayList<>();
 
 @Override
 public String toString() {

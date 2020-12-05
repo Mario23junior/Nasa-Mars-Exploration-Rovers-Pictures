@@ -1,10 +1,14 @@
 package com.project.nasaAPI.Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class MarsPhotoModel {
 	
    private Long id;
    private Integer sol;
    private MarsCamera camera;
+   
+   @JsonProperty("img_src")
    private String imgSrc;
    
 	public Long getId() {
