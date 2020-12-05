@@ -1,4 +1,4 @@
-package com.project.nasaAPI.Service;
+package com.project.nasaAPI.Response;
 
 import java.util.ArrayList;
 import java.util.List;
