@@ -12,9 +12,9 @@ public class MarsPhotoModel {
    private String imgSrc;
    
    @JsonProperty("earth_date")
-   private String eathDate;
+   private String earthDate;
    
-   @JsonProperty
+   @JsonProperty("")
    private MarsRover rover;
    
 	public Long getId() {
@@ -43,10 +43,10 @@ public class MarsPhotoModel {
 	}
 	
 	public String getEathDate() {
-		return eathDate;
+		return earthDate;
 	}
 	public void setEathDate(String eathDate) {
-		this.eathDate = eathDate;
+		this.earthDate = eathDate;
 	}
 	public MarsRover getRover() {
 		return rover;
@@ -54,11 +54,13 @@ public class MarsPhotoModel {
 	public void setRover(MarsRover rover) {
 		this.rover = rover;
 	}
-	
 	@Override
 	public String toString() {
-		return "MarsPhotoModel [id=" + id + ", sol=" + sol + ", camera=" + camera + ", imgSrc=" + imgSrc + "]";
+		return "MarsPhotoModel [id=" + id + ", sol=" + sol + ", camera=" + camera + ", imgSrc=" + imgSrc
+				+ ", earthDate=" + earthDate + ", rover=" + rover + "]";
 	}
+	
+	 
 	
 	
      

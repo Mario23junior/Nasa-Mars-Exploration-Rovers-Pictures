@@ -10,6 +10,7 @@ import com.project.nasaAPI.Service.MarsRoverApiService;
 @Controller
 public class HomeController {
 	
+	 
 	private MarsRoverApiService roverService;
 	
 	public HomeController(MarsRoverApiService roverService) {
@@ -19,6 +20,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String getHomeView(ModelMap model) {
 		MarsRoverApiResponse roverData = roverService.getRoverDate();
+		model.put("roverData", roverData);
   		return "index";
 	}
 }
