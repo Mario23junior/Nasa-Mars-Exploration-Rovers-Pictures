@@ -19,7 +19,7 @@ public class HomeController {
 	   
 	@GetMapping("/")
 	public String getHomeView(ModelMap model) {
-		MarsRoverApiResponse roverData = roverService.getRoverDate();
+		MarsRoverApiResponse roverData = roverService.getRoverDate("curiosity");
 		model.put("roverData", roverData);
   		return "index";
 	}
