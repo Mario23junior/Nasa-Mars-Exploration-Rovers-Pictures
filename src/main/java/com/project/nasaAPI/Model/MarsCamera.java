@@ -3,6 +3,7 @@ package com.project.nasaAPI.Model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MarsCamera {
+	
     private Long id;
     private String name;
     
