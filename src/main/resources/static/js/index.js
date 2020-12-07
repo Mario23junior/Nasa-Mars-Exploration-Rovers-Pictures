@@ -3,7 +3,9 @@
  marsApiButtons.forEach(button => button.addEventListener('click', function () {
                      const buttonId = this.id
                      const roverId = buttonId.split("marsApi")[1]
-                     alert(roverId)
-                 }))
+                     let apiData = document.getElementById('marsApiRoverData')
+                     apiData.value = roverId
+                     document.getElementById("frmRoverType").submit()
+                  }))
  
  
