@@ -20,11 +20,17 @@ public class HomeController {
 	 }
 	   
 	@GetMapping("/")
- 	public String getHomeView(ModelMap model, @RequestParam(required = false) String marsApiRoverData) {
+ 	public String getHomeView(ModelMap model, @RequestParam(required = false) String marsApiRoverData, 
+ 		 @RequestParam(required = false) Integer marsSol) {
 		if(StringUtils.isEmpty(marsApiRoverData)) {
 			marsApiRoverData = "opportunity";
 		}
-		MarsRoverApiResponse roverData = roverService.getRoverDate(marsApiRoverData);
+		
+		if(marsSol == null) {
+			marsSol = 1;
+		}
+		
+		MarsRoverApiResponse roverData = roverService.getRoverDate(marsApiRoverData, marsSol);
    		model.put("roverData", roverData);
   		return "index";
 	}
