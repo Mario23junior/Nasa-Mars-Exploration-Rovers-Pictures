@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import com.project.nasaAPI.DTO.HomeDto;
 import com.project.nasaAPI.Response.MarsRoverApiResponse;
 import com.project.nasaAPI.Service.MarsRoverApiService;
 
@@ -20,20 +20,20 @@ public class HomeController {
 	 }
 	   
 	@GetMapping("/")
- 	public String getHomeView(ModelMap model, @RequestParam(required = false) String marsApiRoverData, 
- 		 @RequestParam(required = false) Integer marsSol,
- 		 @RequestParam(required = false) String defaultCheck1) {
+ 	public String getHomeView(ModelMap model, HomeDto homeDto) {
 		
-		if(StringUtils.isEmpty(marsApiRoverData)) {
-			marsApiRoverData = "opportunity";
+		if(StringUtils.isEmpty(homeDto.getMarsApiRoverData())) {
+			homeDto.setMarsApiRoverData("opportunity");
 		}
 		
-		if(marsSol == null) {
-			marsSol = 1;
+		if(homeDto.getMarsSol() == null) {
+			homeDto.setMarsSol(1);
 		}
 		
-		MarsRoverApiResponse roverData = roverService.getRoverDate(marsApiRoverData, marsSol);
+		MarsRoverApiResponse roverData = roverService.getRoverDate(homeDto.getMarsApiRoverData(), homeDto.getMarsSol());
    		model.put("roverData", roverData);
+   		model.put("homeDto", homeDto);
+   				
   		return "index";
 	}
  }
