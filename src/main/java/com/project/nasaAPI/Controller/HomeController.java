@@ -20,8 +20,8 @@ public class HomeController {
 	 }
 	   
 	@GetMapping("/")
-	public String getHomeView(ModelMap model,  @RequestParam(required = false) String marsApiRoverData) {
-		if(StringUtils.isEmpty(marsApiRoverData)) {
+	public String getHomeView(ModelMap model, @RequestParam(required = false) String marsApiRoverData) {
+		if( StringUtils.isEmpty(marsApiRoverData)) {
 			marsApiRoverData = "opportunity";
 		}
 		MarsRoverApiResponse roverData = roverService.getRoverDate(marsApiRoverData);
@@ -29,4 +29,5 @@ public class HomeController {
   		return "index";
 	}
 	
+ 
 }
