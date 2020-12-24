@@ -6,7 +6,7 @@ import java.util.List;
 import com.project.nasaAPI.Model.MarsPhotoModel;
 
 public class MarsRoverApiResponse {
-   List<MarsPhotoModel> photos = new ArrayList<>();
+   List<MarsPhotoModel> photos = new ArrayList<MarsPhotoModel>();
 
 	@Override
 	public String toString() {
@@ -17,7 +17,7 @@ public class MarsRoverApiResponse {
 		return photos;
 	}
 
-	public void setPhoto(List<MarsPhotoModel> photos) {
+	public void setPhotos(List<MarsPhotoModel> photos) {
 		this.photos = photos;
 	}
   

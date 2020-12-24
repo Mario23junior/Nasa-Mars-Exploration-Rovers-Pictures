@@ -1,4 +1,6 @@
 package com.project.nasaAPI.Controller;
+ 
+import java.lang.reflect.InvocationTargetException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,7 +22,7 @@ public class HomeController {
 	 }
 	   
 	@GetMapping("/")
- 	public String getHomeView(ModelMap model, HomeDto homeDto) {
+ 	public String getHomeView(ModelMap model, HomeDto homeDto) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
 		if(StringUtils.isEmpty(homeDto.getMarsApiRoverData())) {
 			homeDto.setMarsApiRoverData("opportunity");
@@ -30,7 +32,7 @@ public class HomeController {
 			homeDto.setMarsSol(1);
 		}
 		
-		MarsRoverApiResponse roverData = roverService.getRoverDate(homeDto);
+		MarsRoverApiResponse roverData = roverService.getRoverData(homeDto);
    		model.put("roverData", roverData);
    		model.put("homeDto", homeDto);
    				
