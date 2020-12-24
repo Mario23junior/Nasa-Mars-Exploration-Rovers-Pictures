@@ -30,7 +30,7 @@ public class HomeController {
 			homeDto.setMarsSol(1);
 		}
 		
-		MarsRoverApiResponse roverData = roverService.getRoverDate(homeDto.getMarsApiRoverData(), homeDto.getMarsSol());
+		MarsRoverApiResponse roverData = roverService.getRoverDate(homeDto);
    		model.put("roverData", roverData);
    		model.put("homeDto", homeDto);
    				
